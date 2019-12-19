@@ -5,10 +5,10 @@ import * as qs from "querystring";
 
 (async () => {
   // Validate parameters
-  const [ productId, scheduleId, seatId, webhookUrl ] = [
+  const [ productId, scheduleId, blockId, webhookUrl ] = [
     "product-id",
     "schedule-id",
-    "seat-id",
+    "block-id",
     "slack-incoming-webhook-url",
   ].map((name) => {
     const value = core.getInput(name);
@@ -32,7 +32,7 @@ import * as qs from "querystring";
     data: qs.stringify({
       prodId: productId,
       scheduleNo: scheduleId,
-      seatId,
+      blockId,
       volume: 1,
       selectedGradeVolume: 1,
     }),
